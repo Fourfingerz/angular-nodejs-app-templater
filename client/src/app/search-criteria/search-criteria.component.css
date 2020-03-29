@@ -1,0 +1,122 @@
+body {
+	margin: 0;
+}
+
+.form-box {
+	display: flex;
+	justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.nav-logo {
+    display: none!important;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+.logo-container {
+	margin-top: 60px;
+	display: flex;
+	justify-content: center; 
+	align-content: center;
+	align-items: center;
+	text-align: center;
+	z-index: 10;
+}
+
+.logo {
+	align-content: center;
+	align-items: center;
+	text-align: center;
+	margin-top: 60px;
+	z-index: 10;
+	justify-content: center;
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+}
+  
+
+mat-form-field {
+   width: 450px;
+   color: #DF7039;
+   text-align: center;
+ } ::ng-deep .mat-form-field-empty.mat-form-field-label {
+     color: #BFBFBF;
+   } ::ng-deep .mat-focused .mat-form-field-label {
+       color: #0760B4 !important;
+       text-align: left;
+     } ::ng-deep.mat-form-field-underline {
+         background-color: #DF7039 !important;
+       } ::ng-deep.mat-form-field-ripple {
+           background-color: #0760B4  !important;
+         }
+
+mat-radio-button {
+   color: #DF7039;
+ } ::ng-deep .mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element {
+     background-color: #F34032 !important;    
+   } ::ng-deep .mat-radio-button.mat-accent .mat-radio-inner-circle {
+       background-color: #F34032!important;   
+     } ::ng-deep.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+         border-color:#F34032!important; 
+       }
+  
+  .droplist {
+    color: #0760B4
+  }
+  
+  .diets {
+    margin-bottom: 5px;
+  } ::ng-deep .mat-checkbox-checked .mat-checkbox-background, .mat-checkbox-indeterminate .mat-checkbox-background {
+      background-color: #F34032 !important;
+    }  ::ng-deep .mat-checkbox:not(.mat-checkbox-disabled) .mat-checkbox-ripple .mat-ripple-element {
+          background-color: #F34032 !important;
+        } 
+
+  
+  .diet-title {
+    margin-left: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    padding-right: 10px;
+    color: #DF7039;
+  }
+  
+  .diet-info {
+    color: #D3D3D3;
+  }
+  
+  mat-slider {
+    width: 400px;
+  } ::ng-deep .mat-accent .mat-slider-track-fill {
+      background-color: #F34032;
+    } ::ng-deep .mat-accent .mat-slider-thumb {
+        background-color: #F34032;
+      } ::ng-deep .mat-accent .mat-slider-thumb-label {
+          background-color: #F34032;
+        }
+  
+  button {
+    margin-top: 50px;
+    border: 1px solid #D3D3D3;
+    color: #0760B4;
+    width: 150px;
+  }
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0;
+}
+
+.radio{
+  margin: 5px;
+}

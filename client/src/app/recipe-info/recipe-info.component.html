@@ -1,0 +1,30 @@
+<!-- Recipe Breakdown -->
+<div *ngIf="!recipe" class="cat-box">
+	<img *ngIf="!recipe" src="assets/cat_hungry.png" alt="hungry-cat">
+    <span *ngIf="!recipe">Nothing to see here</span>
+	</div>
+<div class="card-container">
+<mat-card *ngIf="recipe" class="info-container">
+  <mat-card-header>
+    <mat-card-title>{{ recipe.label }}</mat-card-title>
+  </mat-card-header>
+	<div class="image">
+  <img class="img" mat-card-image src="{{ recipe.image }}" alt="picture of {{ recipe.label }}">
+		</div>
+  <mat-card-content>
+    <p>
+      Calories per serving: {{ (recipe.calories / recipe.yield).toFixed(0) }} / Serves {{ recipe.yield }}
+    </p>
+	  <li class="tag">Tags: 
+        <span class="tags" *ngFor="let tag of recipe.healthLabels; index as i"><span *ngIf="i !== 0">, </span>{{tag}}</span>
+      </li>
+	  <h3>Ingredients</h3>
+    <ul class="ingredients-list">
+      <li *ngFor="let ingredient of recipe.ingredientLines">{{ ingredient }}</li>
+    </ul>
+  </mat-card-content>
+  <mat-card-actions>
+     <button mat-button><a href="{{ recipe.url }}">Original Recipe</a></button>
+  </mat-card-actions>
+</mat-card>
+	</div>

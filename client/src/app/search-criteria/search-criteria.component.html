@@ -1,0 +1,65 @@
+<!-- Home Page -->
+
+<div class="logo-container">
+<div class="logo">
+<img src="assets/omnomnom.png" alt="logo">
+</div>	
+</div>
+
+<div class="form-box">
+<form #searchForm="ngForm" (ngSubmit)="searchRecipes(searchForm)">
+ 
+    <mat-form-field>
+      <input matInput placeholder="e.g. soup, salad, pizza" type="text" [(ngModel)]="searchWord" name="searchWord">
+    </mat-form-field>
+  
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title class="droplist">
+            Diet Labels
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+    	  
+		  
+<mat-radio-group
+	[(ngModel)]="dietaryRestriction"
+	name="dietaryRestriction"			 
+aria-labelledby="diet-restrictions"
+  class="radio-group">
+  <mat-radio-button class="radio" *ngFor="let option of dietOptions" [value]="option.value">
+    {{ option.name }}
+  </mat-radio-button>
+</mat-radio-group>
+
+
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title class="droplist">
+            Calories
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+     
+
+        <mat-slider	
+		[(ngModel)]="minCalories"			
+		type="number"
+		name="minCalories"			
+        thumbLabel
+        [displayWith]="formatLabel"
+        tickInterval="100"
+        min="1"
+        max="2000"
+		value="1"			
+        ></mat-slider>
+       
+      </mat-expansion-panel>
+    </mat-accordion>
+  
+    <button mat-button routerLink="/results">Submit</button>
+  
+  
+  
+  </form>
+	</div>

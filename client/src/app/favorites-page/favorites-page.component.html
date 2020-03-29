@@ -1,0 +1,11 @@
+<!-- Favorites Page -->
+
+<div class="component-container">
+	<div class="cat-container">
+	<img *ngIf="favorites.length === 0" src="assets/cat_hungry.png" alt="hungry-cat">
+        <span *ngIf="favorites.length === 0">Nothing to see here</span>
+		</div>
+        <div class="recipe-results-container">
+          <recipe-item *ngFor="let recipe of favorites" [recipe]="recipe"></recipe-item>
+        </div>
+      </div>
