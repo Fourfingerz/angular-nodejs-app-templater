@@ -11,7 +11,7 @@ export class RecipeInfoComponent implements OnInit {
 
   recipe: any;
 
-  constructor(private route: ActivatedRoute, private search: SearchService) { }
+  constructor(public route: ActivatedRoute, public search: SearchService) { }
 
   ngOnInit() {
     this.recipe = this.search.getRecipe(this.route.snapshot.paramMap.get("name"));

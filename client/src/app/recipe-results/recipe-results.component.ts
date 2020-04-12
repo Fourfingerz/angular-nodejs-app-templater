@@ -10,7 +10,7 @@ export class RecipeResultsComponent implements OnInit {
 
   recipeResults: any[] = [];
 
-  constructor(private search: SearchService) { }
+  constructor(public search: SearchService) { }
 
   ngOnInit() {
     this.getRecipes();

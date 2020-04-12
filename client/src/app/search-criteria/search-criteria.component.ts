@@ -3,13 +3,18 @@ import { SearchService } from '../search.service';
 import { Router } from '@angular/router';
 import { MatAccordion } from '@angular/material';
 
+
 @Component({
   selector: 'search-criteria',
   templateUrl: './search-criteria.component.html',
   styleUrls: ['./search-criteria.component.css']
 })
+
 export class SearchCriteriaComponent implements OnInit {
 	
+	searchWord: string;
+    dietaryRestriction?: string;
+    minCalories?: number;
 	
   dietOptions: any[] = [
 	{ name: "Vegetarian", value: "vegetarian" },
@@ -37,7 +42,7 @@ export class SearchCriteriaComponent implements OnInit {
 	
 	
 
-  constructor(private search: SearchService, private router: Router) {
+  constructor(public search: SearchService, public router: Router) {
     this.accordionList = [
       {
         id:"panel-1",

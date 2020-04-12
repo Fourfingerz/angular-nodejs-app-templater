@@ -10,7 +10,7 @@ export class FavoritesPageComponent implements OnInit {
 	
   favorites: any[];
 
-  constructor(private favoritesService: FavoritesService) { }
+  constructor(public favoritesService: FavoritesService) { }
 
   ngOnInit() {
     this.favorites = this.favoritesService.getFavorites();
