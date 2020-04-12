@@ -8,8 +8,8 @@ import { Observable } from 'rxjs';
 })
 export class SearchService {
 
-  public searchInterface: SearchInterface; 
-  public searchResults: any[] = []; 
+  private searchInterface: SearchInterface; 
+  private searchResults: any[] = []; 
 
   constructor(private api: ApiService) { }
 
@@ -36,12 +36,12 @@ export class SearchService {
   }
 
 
-  public performSearch(): void {
+  private performSearch(): void {
     this.api.getData(this.searchInterface).subscribe(this.handleResponse);
   }
 
   
-  public handleResponse = (response: any): void => {
+  private handleResponse = (response: any): void => {
     for (let hit of response["hits"]) {
       this.searchResults.push(hit.recipe);
     }

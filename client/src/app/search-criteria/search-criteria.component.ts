@@ -42,7 +42,7 @@ export class SearchCriteriaComponent implements OnInit {
 	
 	
 
-  constructor(public search: SearchService, public router: Router) {
+  constructor(private search: SearchService, private router: Router) {
     this.accordionList = [
       {
         id:"panel-1",

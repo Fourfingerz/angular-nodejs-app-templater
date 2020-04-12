@@ -10,7 +10,7 @@ export class ApiService {
   appid: string = "f525747a";
   apiUrl: string = "https://api.edamam.com/search";
 
-  constructor(public http: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   getData(options: SearchInterface) {
     

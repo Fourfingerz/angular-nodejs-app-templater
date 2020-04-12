@@ -11,7 +11,7 @@ export class RecipeItemComponent implements OnInit {
 
   @Input() recipe: any;
 
-  constructor(public favorites: FavoritesService, public router: Router) { }
+  constructor(private favorites: FavoritesService, private router: Router) { }
 
   ngOnInit() {
   }

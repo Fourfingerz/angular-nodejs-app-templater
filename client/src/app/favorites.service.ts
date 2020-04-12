@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class FavoritesService {
 
-  public favorites: any[] = []; 
+  private favorites: any[] = []; 
 
   constructor() { }
 
