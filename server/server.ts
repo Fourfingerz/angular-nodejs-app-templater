@@ -1,7 +1,8 @@
-// equivalent of older: const express = require('express')
-//import * as express from 'express';
 const express = require('express');
-const app = express();// Allow any method from any host and log requests
+const routes = express.Router(); // This is where we pull in the Angular routes
+
+const app = express(); // Allow any method from any host and log requests
+
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
@@ -12,11 +13,12 @@ app.use((req, res, next) => {
         console.log(`${req.ip} ${req.method} ${req.url}`);
         next();
     }
-})// Handle POST requests that come in formatted as JSON
+}); // Handle POST requests that come in formatted as JSON
+
 app.use(express.json());// A default hello word route
-app.get('/', (req, res) => {
-    res.send({hello: 'world'});
-});// start our server on port 4201
+
+app.use('/', routes);
+
 app.listen(4201, '127.0.0.1', function() {
     console.log("Server now listening on 4201");
 });
